@@ -4,6 +4,10 @@ Complete this lab before starting any kernel-module labs.
 
 In this lab you will prepare the BeagleBone Black, verify that Linux is running, cross-compile a first ARM user-space program, and create the shared kernel workspace used by Lab 02 and later labs.
 
+Work in `classroom-templates/lab01-board-bringup/` on branch `lab01`
+in your personal course fork. Before starting, follow the
+[student workflow](../../docs/student-workflow.md) to set up instructor review.
+
 ## Command labels
 
 - **[HOST]** — your Linux PC.
@@ -26,7 +30,7 @@ The kernel workspace created here is required by Lab 02.
 
 ## 2. Repository structure
 
-This lab repository contains:
+This lab directory contains:
 
 ```text
 lab01-board-bringup/
@@ -38,7 +42,7 @@ lab01-board-bringup/
     └── hello.c
 ```
 
-Create the shared workspace outside this lab repository on **[HOST]**:
+Create the shared workspace outside your course fork on **[HOST]**:
 
 ```bash
 mkdir -p ~/bbb-workspace/downloads
@@ -309,7 +313,7 @@ Run `exit` to return to the HOST shell.
 The lab directory contains `src/hello.c`. In this first lab, run every build and
 deployment command manually so that each step is visible.
 
-**[HOST]**, open a terminal in this lab repository (the directory containing
+**[HOST]**, open a terminal in this lab directory (the directory containing
 this README and Makefile):
 
 ```bash
@@ -355,7 +359,7 @@ arm-linux-gnueabihf-gcc -O2 -Wall -Wextra src/hello.c -o build/hello
 
 ## 14. Obtain and build the kernel tree
 
-On **[HOST]**, obtain and build the kernel outside this lab repository:
+On **[HOST]**, obtain and build the kernel outside your course fork:
 
 ```bash
 cd ~/bbb-workspace/kernel
@@ -366,9 +370,9 @@ git checkout origin/am33x-v6.12 -b am33x-v6.12-course
 ```
 
 This creates `~/bbb-workspace/kernel/bb-kernel` using the course branch
-`am33x-v6.12`. The Linux source tree stays outside the course and lab Git
-repositories and is required by Lab 02. On a new PC, repeat this lab to recreate
-the workspace; do not copy the kernel tree into the lab repository.
+`am33x-v6.12`. The Linux source tree stays outside the course repository and its
+forks and is required by Lab 02. On a new PC, repeat this lab to recreate
+the workspace; do not copy the kernel tree into your course fork.
 
 `bb-kernel` downloads Linux sources and its matching compiler. On the first
 configuration screen, change nothing: choose `Exit`, then `Save: Yes`. The first
@@ -430,7 +434,15 @@ arm-linux-gnueabihf-gcc --version
 
 ## 16. Submission
 
-- `src/hello.c` and `Makefile` from this lab repository;
+Submit a PR from `lab01` to `master` **in your own fork**, following the
+[student workflow](../../docs/student-workflow.md). Include the files and
+report evidence listed below, and send the instructor the PR URL. If a
+classroom platform or LMS is used, submit that URL there as well.
+
+The lab is accepted only after `@ant112342` approves the PR. Address review
+comments on the same branch and merge only after approval of the current work.
+
+- `src/hello.c` and `Makefile` from this lab directory;
 - completed `report.md` with your name, GitHub username, and the evidence below;
 - image filename and SHA-256;
 - `uname -r`, OS information, `lsblk`, and BBB IP address;

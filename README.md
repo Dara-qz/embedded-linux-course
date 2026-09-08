@@ -8,13 +8,15 @@ troubleshooting.
 
 Do not try to understand every directory or the top-level Makefile immediately.
 
-1. Open [Lab 01](classroom-templates/lab01-board-bringup/README.md).
+1. Follow the [student workflow](docs/student-workflow.md) to create your fork,
+   set up instructor review, and start a `lab01` branch. Then open
+   [Lab 01](classroom-templates/lab01-board-bringup/README.md).
 2. Follow it from top to bottom. Commands are labelled **HOST** (Linux PC) or
    **BBB** (BeagleBone Black).
 3. Complete [Lab 02](classroom-templates/lab02-first-kernel-module/README.md) only after Lab 01.
 4. `examples/` contains finished references. `classroom-templates/` contains
-   self-contained assignment templates. When GitHub Classroom is used, accept
-   the assignment and work in your own lab repository.
+   lab instructions and starter files. Complete these files in your own fork;
+   keep one fork for the whole course.
 
 ## Repository layout
 
@@ -24,7 +26,8 @@ Do not try to understand every directory or the top-level Makefile immediately.
 ├── .gitignore
 ├── Makefile                  Optional reference-example shortcuts
 ├── docs/
-│   └── course-workspace.md
+│   ├── course-workspace.md
+│   └── student-workflow.md
 ├── examples/
 │   ├── userspace-programs/01-hello-user/
 │   └── kernel-module-demos/01-hello-module/
@@ -54,11 +57,11 @@ sudo apt install -y git build-essential bc bison flex libssl-dev \
   g++-arm-linux-gnueabihf openssh-client minicom
 ```
 
-After cloning, the student's first command is:
+Create and clone your personal fork using the
+[student workflow](docs/student-workflow.md). From the root of that clone,
+open Lab 01:
 
 ```bash
-git clone <course-repository-url> embedded-linux-bbb
-cd embedded-linux-bbb
 less classroom-templates/lab01-board-bringup/README.md
 ```
 
@@ -87,13 +90,20 @@ the explicit, safety-critical image-writing command.
 
 ## Course workflow
 
-1. Read the lab's `README.md` completely.
+1. Create a separate lab branch in your fork and read the lab's `README.md`.
 2. Write code only in that lab directory unless instructed otherwise.
 3. In Lab 01, run the documented compiler, `scp`, and `ssh` commands manually.
 4. In later labs, use their Makefiles where the instructions introduce them.
 5. Test the result on the BBB as described in the lab.
-6. Complete `report.md` and submit source, Makefile, and report in your lab
-   repository. Keep generated outputs out of Git.
+6. Complete `report.md`, commit source, Makefile, and report, and open a PR from
+   your lab branch to `master` in your own fork. Keep generated outputs out of Git.
+7. Address the instructor's feedback and merge only after their approval.
+
+**A lab is accepted only after `@ant112342` approves its PR. A push or merge
+alone does not count as acceptance.** See the
+[student workflow](docs/student-workflow.md) for the required fork protection
+settings and how to receive new labs through an update PR. If a classroom
+platform or LMS is used, submit the same PR URL there.
 
 The reference examples provide optional deployment helpers whose defaults can
 be overridden on the command line. Run this from an example directory:

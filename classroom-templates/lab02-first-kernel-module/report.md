@@ -4,7 +4,7 @@
 - GitHub username:
 
 Replace each placeholder with your own command output. Run HOST build commands
-from this lab repository and BBB module commands from `/home/debian/labs/lab02`.
+from this lab directory and BBB module commands from `/home/debian/labs/lab02`.
 Keep the complete `vermagic`, not only its release prefix.
 
 ## Prerequisites and module metadata

@@ -36,7 +36,7 @@ results. Do not include passwords or private keys.
 
 ## First user-space program
 
-### HOST, in this lab repository: `file build/hello`
+### HOST, in this lab directory: `file build/hello`
 
 ```text
 <paste output>

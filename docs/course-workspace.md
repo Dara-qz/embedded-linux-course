@@ -1,11 +1,12 @@
 # Course workspace
 
 This repository does not contain the Linux kernel source tree. It contains
-course documentation, reference examples, and self-contained lab templates for
-future GitHub Classroom assignments. Students work in their own lab repositories.
+course documentation, reference examples, and lab instructions with starter
+files. Students work in personal forks and submit each lab through a pull
+request; see the [student workflow](student-workflow.md).
 
 During [Lab 01](../classroom-templates/lab01-board-bringup/README.md), each student
-creates a shared local workspace outside the course and lab repositories:
+creates a shared local workspace outside the course repository and its forks:
 
 ```text
 ~/bbb-workspace/
@@ -62,9 +63,9 @@ If they differ, obtain the course-pinned commit matching the assigned image
 from the instructor, as described in Lab 01.
 
 On a new PC, repeat Lab 01 to recreate this workspace and perform the same
-release check. Cloning a lab repository alone does not provide a kernel tree.
+release check. Cloning your course fork alone does not provide a kernel tree.
 
 Keep kernel sources, toolchains, downloaded images, and generated build
-artifacts out of the course and Classroom Git repositories. Commit lab source,
+artifacts out of the course repository and its forks. Commit lab source,
 Makefiles, and completed reports. The separate `bb-kernel` clone has its own
-upstream Git history; it must not be copied or added into a lab repository.
+upstream Git history; it must not be copied or added into your course fork.

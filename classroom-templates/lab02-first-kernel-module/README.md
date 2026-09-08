@@ -3,6 +3,10 @@
 Complete Lab 01 first. This guide assumes working SSH and a kernel tree whose
 full release matches the kernel running on the BeagleBone Black.
 
+Work in `classroom-templates/lab02-first-kernel-module/` on branch `lab02`
+in your personal course fork. Before starting, follow the
+[student workflow](../../docs/student-workflow.md) to set up instructor review.
+
 ## Command labels
 
 - **[HOST]** — your Linux PC.
@@ -67,7 +71,7 @@ checked in this lab.
 
 ## 4. Inspect the starter files
 
-This lab repository contains:
+This lab directory contains:
 
 ```text
 lab02-first-kernel-module/
@@ -79,7 +83,7 @@ lab02-first-kernel-module/
     └── hello.c
 ```
 
-**[HOST]**, open a terminal in this lab repository (the directory containing
+**[HOST]**, open a terminal in this lab directory (the directory containing
 this README and Makefile):
 
 ```bash
@@ -89,8 +93,8 @@ sed -n '1,200p' src/hello.c
 sed -n '1,240p' Makefile
 ```
 
-Write your work in this lab repository and record results in `report.md`.
-The shared kernel tree stays outside this repository.
+Write your work in this lab directory and record results in `report.md`.
+The shared kernel tree stays outside your course fork.
 
 ### Important parts of `src/hello.c`
 
@@ -378,6 +382,14 @@ Use the matching `~/bbb-workspace/kernel/bb-kernel/KERNEL` tree built on HOST.
 Headers from a different release are not a substitute.
 
 ## 15. Submission
+
+Submit a PR from `lab02` to `master` **in your own fork**, following the
+[student workflow](../../docs/student-workflow.md). Include the files and
+report evidence listed below, and send the instructor the PR URL. If a
+classroom platform or LMS is used, submit that URL there as well.
+
+The lab is accepted only after `@ant112342` approves the PR. Address review
+comments on the same branch and merge only after approval of the current work.
 
 - `src/hello.c`, `Makefile`, and completed `report.md` with your name and
   GitHub username;
