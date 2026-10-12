@@ -91,3 +91,7 @@ Loadable kernel modules (LKM) must be compiled against the exact kernel version,
 
 Submit this completed report with src/hello.c and Makefile. Do not commit
 images, executables, toolchains, kernel sources, or build artifacts.
+
+## Variant 10
+Purpose of arm-linux-gnueabihf-gcc: Це крос-компілятор, який працює на машині x86_64 HOST і генерує бінарний виконуваний файл під архітектуру ARM Cortex-A8 (ARMv7-A) для BeagleBone Black. Префікс розшифровується як цільова архітектура (arm), цільова ОС (linux), бібліотека C (gnu) та бінарний інтерфейс з апаратною підтримкою обчислень із рухомою комою (eabihf). 
+  Why suitable for BBB and not HOST: Комп'ютер x86_64 і плата BBB мають принципово різні системи команд (CISC x86 проти RISC ARM). Заголовок ELF сформованого бінарника містить мітку архітектури ARM, тому ядро хоста відхилить його запуск із помилкою Exec format error, тоді як ядро Linux на BBB успішно виконає інструкції ARM.
